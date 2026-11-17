@@ -1,0 +1,13 @@
+{
+  "_comment": "Copy these from Edge Impulse > Spectral features > Parameters. Keys use underscores.",
+  "scale_axes": 1,
+  "input_decimation_ratio": 1,
+  "filter_type": "none",
+  "filter_cutoff": 3,
+  "filter_order": 6,
+  "analysis_type": "FFT",
+  "fft_length": 16,
+  "do_log": true,
+  "do_fft_overlap": true,
+  "extra_low_freq": false
+}

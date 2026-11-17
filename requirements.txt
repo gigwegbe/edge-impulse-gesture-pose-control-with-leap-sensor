@@ -1,0 +1,14 @@
+cffi        # needed at runtime by leapc_cffi (incl. the module bundled with Gemini on macOS)
+numpy
+opencv-python  # --visual skeleton window
+requests
+# Edge Impulse Linux SDK (live inference with a .eim model).
+# Its package imports pyaudio, so install portaudio19-dev first (setup scripts do this).
+pyaudio
+edge_impulse_linux
+six         # edge_impulse_linux needs it but doesn't declare it
+pyautogui   # media_control.py keys backend (X11)
+# optional, air_canvas.py: hold SPACE to write (--pen key) and debug plots (--debug)
+# pynput
+# matplotlib
+ai-edge-litert
