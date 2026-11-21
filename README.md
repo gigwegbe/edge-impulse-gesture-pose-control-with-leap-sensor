@@ -13,19 +13,37 @@ your Mac, with no camera and no cloud.
 
 ## Contents
 
-- [What it does](#what-it-does)
-- [How it works](#how-it-works)
-- [What you need](#what-you-need)
-- [Installation](#installation)
-- [Quick start](#quick-start)
-- [Using the app](#using-the-app)
-- [Train your own model](#train-your-own-model)
-- [Settings you can change](#settings-you-can-change)
-- [Troubleshooting](#troubleshooting)
-- [Project structure](#project-structure)
-- [Other tools in this repo](#other-tools-in-this-repo)
-- [Roadmap](#roadmap)
-- [License](#license)
+- [Leap Motion Pose Control for Spotify](#leap-motion-pose-control-for-spotify)
+  - [Contents](#contents)
+  - [What it does](#what-it-does)
+  - [How it works](#how-it-works)
+    - [Model performance](#model-performance)
+  - [What you need](#what-you-need)
+    - [Hardware](#hardware)
+    - [Software](#software)
+  - [Installation](#installation)
+    - [1. Install Ultraleap Gemini](#1-install-ultraleap-gemini)
+    - [2. Get the code](#2-get-the-code)
+    - [3. Create a Python environment](#3-create-a-python-environment)
+    - [4. Install the LeapC Python bindings](#4-install-the-leapc-python-bindings)
+    - [5. Install the other packages](#5-install-the-other-packages)
+    - [6. Check the sensor](#6-check-the-sensor)
+  - [Quick start](#quick-start)
+  - [Using the app](#using-the-app)
+    - [Tips for reliable control](#tips-for-reliable-control)
+    - [Reading the screen](#reading-the-screen)
+  - [Train your own model](#train-your-own-model)
+    - [1. Record poses](#1-record-poses)
+    - [2. Upload to Edge Impulse](#2-upload-to-edge-impulse)
+    - [3. Design and train](#3-design-and-train)
+    - [4. Download and use the model](#4-download-and-use-the-model)
+    - [Adding or changing poses](#adding-or-changing-poses)
+  - [Settings you can change](#settings-you-can-change)
+  - [Troubleshooting](#troubleshooting)
+  - [Project structure](#project-structure)
+  - [Future Work](#future-work)
+  - [Acknowledgements](#acknowledgements)
+  - [License](#license)
 
 ---
 
@@ -441,36 +459,15 @@ data/poses/            Your recordings (CSV)
 docs/                  Images for this README
 ```
 
----
+## Future Work
 
-## Other tools in this repo
-
-This project grew out of earlier experiments with the same sensor. They are
-still here if you want to explore:
-
-- **Swipe gestures** (`record.py`, `live_tflite.py`, `speed_gate.py`):
-  motion gestures like swipe left and right, trained as time series in Edge
-  Impulse. Includes a speed-based detector that ignores return strokes, and a
-  segment mode that cuts gestures the same way for recording and live use.
-- **Air writing canvas** (`air_canvas.py`, `air_debug.py`): write in the air
-  with your fingertip and save each word as an image, as a first step towards
-  handwriting recognition with TrOCR. Includes a debug mode that plots tracking
-  jitter.
-- **Skeleton viewer** (`visual.py`): the `--visual` option for the gesture scripts.
-- **Linux setup** (`scripts/`): install scripts for Ultraleap Gemini on
-  Ubuntu x64.
-
----
-
-## Roadmap
-
-- [ ] Run on an **Arduino Uno Q** or **Rubik Pi 3**, as a standalone box with
+- Run on an **Arduino Uno Q** or **Rubik Pi 3**, as a standalone box with
       no laptop (first, check that Gemini supports the Leap V1 on ARM Linux)
-- [ ] **Spotify Web API** backend, so it works on Linux boards too
-- [ ] **Arduino Modulino** feedback: Pixels for the current pose, buzzer for
+- **Spotify Web API** backend, so it works on Linux boards too
+- **Arduino Modulino** feedback: Pixels for the current pose, buzzer for
       confirmation, Distance sensor for wake-up or a dimmer control
-- [ ] More features: focus timer (Pomodoro), Do Not Disturb, desk lamp control
-- [ ] Two-hand support
+- More features: focus timer (Pomodoro), Do Not Disturb, desk lamp control
+- Two-hand support
 
 ---
 
